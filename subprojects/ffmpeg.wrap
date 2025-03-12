@@ -1,0 +1,4 @@
+[wrap-git]
+directory = 'FFmpeg'
+url = 'https://github.com/FFmpeg/FFmpeg.git'
+revision = 'n7.1.1'
