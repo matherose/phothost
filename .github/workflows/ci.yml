@@ -23,4 +23,4 @@ jobs:
         run: cmake -S . -B build -G Ninja
 
       - name: Build project
-        run: cmake --build build
+        run: cmake --build build -DAOM_TARGET_CPU=generic
