@@ -1,9 +1,10 @@
 project('phothost', 'c',
     version: '0.1',
-    default_options: ['c_std=gnu99', 'warning_level=3', 'optimization=2']
+    default_options: ['c_std=gnu99', 'optimization=2']
 )
 
-ffmpeg_dep = dependency('libavutil', fallback : ['ffmpeg', 'libavutil_dep'])
+# Include the subproject
+ffmpeg_dep = subproject('ffmpeg').get_variable('ffmpeg_dep')
 
 # Intégration des sous-projets via leurs fichiers wrap placés dans subprojects/
 if host_machine.system() == 'darwin'
@@ -18,5 +19,5 @@ endif
 executable('phothost', 'src/main.c',
     c_args: ['-fstack-protector-strong', '-D_FORTIFY_SOURCE=2'],
     link_args: platform_link_args,
-    dependencies : ffmpeg_dep
+    dependencies: [ffmpeg_dep]
 )
