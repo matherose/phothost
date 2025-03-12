@@ -1,3 +1,7 @@
+# Created by https://www.toptal.com/developers/gitignore/api/cmake,ninja,c,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=cmake,ninja,c,visualstudiocode
+
+### C ###
 # Prerequisites
 *.d
 
@@ -51,28 +55,47 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# VS Code
-.vscode/
-
-# Meson
-## subproject directories
-/subprojects/*
-!/subprojects/*.wrap
-
-## Meson Directories
-meson-logs
-meson-private
-
-## Meson Files
-meson_benchmark_setup.dat
-meson_test_setup.dat
-sanitycheckcpp.cc     # C++ specific
-sanitycheckcpp.exe    # C++ specific
-
-# Ninja
-build.ninja
-.ninja_deps
-.ninja_logs
-
-# Misc
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
 compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+CMakeUserPresets.json
+
+# External projects
+*-prefix/
+
+### Ninja ###
+.ninja_deps
+.ninja_log
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/cmake,ninja,c,visualstudiocode
+
